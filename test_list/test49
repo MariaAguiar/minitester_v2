@@ -1,0 +1,2 @@
+clear | $var
+echo $? > exitcodes

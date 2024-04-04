@@ -1,0 +1,3 @@
+echo test|>cat
+echo $? > exitcodes
+rm cat

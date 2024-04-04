@@ -1,0 +1,2 @@
+echo Good luck > $var
+echo $? > exitcodes

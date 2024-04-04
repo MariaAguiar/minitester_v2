@@ -1,0 +1,2 @@
+unset ...cookie? ""
+echo $? > exitcodes

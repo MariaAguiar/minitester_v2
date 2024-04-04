@@ -1,0 +1,2 @@
+echo "agora 'mais' fdd"
+echo $? > exitcodes

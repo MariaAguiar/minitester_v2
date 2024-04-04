@@ -1,0 +1,2 @@
+export cookie OLDPWD
+echo $? > exitcodes

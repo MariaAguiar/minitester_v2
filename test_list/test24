@@ -1,0 +1,2 @@
+unset "" . : , ! \ + = - _ _a
+echo $? > exitcodes

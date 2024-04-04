@@ -1,0 +1,6 @@
+export a=a b=b c=c d=d e=e
+echo $? > exitcodes
+echo "$a "$b" $c $d" "$e"
+echo $? > exitcodes
+unset a b c d e
+echo $? > exitcodes

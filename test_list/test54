@@ -1,0 +1,2 @@
+export "" . : , ! \ + = - _ _a
+echo $? > exitcodes

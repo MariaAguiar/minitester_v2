@@ -1,0 +1,2 @@
+cd ./path_not_found
+echo $? > exitcodes

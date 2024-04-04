@@ -1,0 +1,2 @@
+exit exit 1
+echo $? > exitcodes

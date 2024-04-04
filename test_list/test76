@@ -1,0 +1,2 @@
+echo "cat lol.c | cat > lol.c"
+echo $? > exitcodes

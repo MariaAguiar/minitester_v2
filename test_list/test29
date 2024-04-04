@@ -1,0 +1,3 @@
+< potato cd $PWD
+rm potato
+echo $? > exitcodes

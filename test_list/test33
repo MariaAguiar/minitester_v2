@@ -1,0 +1,2 @@
+cat < test
+echo $? > exitcodes

@@ -1,0 +1,2 @@
+echo "$var"Makefile
+echo $? > exitcodes

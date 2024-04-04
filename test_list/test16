@@ -1,0 +1,3 @@
+>a ls <machin >>c >d
+echo $? > exitcodes
+rm a c d
