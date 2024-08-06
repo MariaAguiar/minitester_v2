@@ -7,6 +7,7 @@ RESET='\033[0m'
 
 [ -e out_bash ] && rm -rf out_bash
 [ -e out_minishell ] && rm -rf out_minishell
+[ -e out_leaks ] && rm -rf out_leaks
 
 n=1
 args_list="$@"
@@ -17,7 +18,7 @@ get_arg1()
 	for arg in "$@"
 	do
 		if [ "$arg" = "-v" ]; then
-			echo "valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes --suppressions="readline.supp"";
+			echo "valgrind --trace-children=yes --track-fds=yes --suppressions="readline.supp"";
 		fi
 	done
 }
@@ -54,6 +55,7 @@ clean_test()
 # Run Tests
 do_tests()
 {
+	mkdir out_leaks
 	mkdir out_minishell
 	mkdir out_bash
 	chmod +rw out_bash;
@@ -64,6 +66,12 @@ do_tests()
 	echo "${dir}:"
 	dir+="/"
 	while [ -e "${dir}${test}${n}" ]; do
+		res0="out_leaks/res${n}" 
+        $val ../minishell < "${dir}${test}${n}" > $res0 2>&1>/dev/null
+		clean_test $res0;
+		if [ $(head -10 $res0 | wc -l) -lt 10 ]; then
+			rm $res0
+		fi
 		res1="out_minishell/res${n}" 
         $val ../minishell < "${dir}${test}${n}" > $res1 2>/dev/null
 		cat exitcodes >> $res1
@@ -87,6 +95,7 @@ do_tests()
 	n=1
 	[ -e out_bash ] && rm -rf out_bash
 	[ -e out_minishell ] && rm -rf out_minishell
+	rmdir out_leaks
 }
 
 # Prep Work
@@ -94,6 +103,7 @@ prompt=$(bash ./gen_prompt.sh);
 val=$(get_arg1 ${args_list[@]});
 
 #Run Test Lists
+touch exitcodes
 do_tests "test_list";
 rm exitcodes
 
