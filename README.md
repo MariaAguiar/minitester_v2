@@ -10,7 +10,7 @@ Instructions:
 - Enter the 'minitester' folder and run:
 chmod +rwx ./minitester.sh;
 bash ./minitester.sh [-v]
-- It takes a few seconds to get the output, especially if run with the valgrind option ([-v]). A waiting time of several minutes may indicate an error, or possibly that the tester got stuck on certain tests. After a successful run, all created folders and files will be deleted. The exceptions are test results with unexpected outputs. In this case, a "out_leaks" folder will be left on the minitester, containing the test outputs that might have problems for your later analysis. In this case, "res[test number]" is the result of your minishell to "test[test_number] contained in the test_list" folder.
+- It takes a few seconds to get the output, especially if run with the valgrind option ([-v]). A waiting time of several minutes may indicate an error, or possibly that the tester got stuck on certain tests. After a successful run, all created folders and files will be deleted. The exceptions are test results with unexpected outputs and full valgrind prints. In both cases, an "out_leaks" folder will be left on the minitester, containing the these outputs for your later analysis. In this case, "res[test number]" is the result of your minishell to "test[test_number]" contained in the "test_list" folder.
 
 
 Evaluating the results:
