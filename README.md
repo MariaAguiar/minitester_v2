@@ -1,5 +1,5 @@
 # minitester
-Output tester for the 42 Common Core 'minishell' project | Made to help during the development stages | On going
+Output tester for the 42 Common Core 'minishell' project | Made to help during the development stages | In testing
 
 Prerequisites:
 - Your shell executable must have functional prompt capturing and processing capabilities
