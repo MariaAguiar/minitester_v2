@@ -23,6 +23,3 @@ Further usage:
 
 
 Thanks!
-
-
-![visitors](https://visitor-badge.glitch.me/badge?page_id=mariaaguiar.minitester_v2)
